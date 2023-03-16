@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Home/Home.css">
+    <!--Boxicons CDN Link-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<%- include('partials/header') %>       
+
+<div class="main-content">
+        <header>
+            <div class="header-title-wrapper">
+                <div class="header-title">
+                    <h1>Accueil</h1>
+                </div>
+            </div>
+        </header>
+        <div class="information"><h3>Une information globale sur tous les réfrigérateurs</h3></div>
+        <div class="main">
+            <div class="temperatures">
+                <a href="/dashboard">
+                <h2>Réfrigérateur_1</h2>
+                <div class="ii">
+                    <h3>Température Actuelle</h3>
+                    <h1><%- temperature %> °C</h1>
+                </div>
+                </a>
+            </div>
+            <div class="temperatures">
+                <a href="/dashboard-2">
+                <h2>Réfrigérateur_2</h2>
+                <div class="ii">
+                    <h3>Température Actuelle</h3>
+                    <h1><%- temperature2 %> °C</h1>
+                </div>
+                </a>
+            </div>
+            <div class="temperatures">
+                <a href="/dashboard-3">
+                <h2>Réfrigérateur_3</h2>
+                <div class="ii">
+                    <h3>Température Actuelle</h3>
+                    <h1><%- temperature3 %> °C</h1>
+                </div>
+                
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="Home/home.js"></script>
+</html>

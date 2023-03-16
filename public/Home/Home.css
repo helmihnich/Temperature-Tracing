@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
+
+:root{
+    --color-main: #396aff;
+    --bg2: #dce5ff;
+    --bg: #fbfefd;
+    --main-accents: #e9eefd;
+    --main-text: #4b5876;
+    --shadow: rgba(17,17,26,0.1) 2px 2px 16px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    height: 100%;
+    width: 78px; 
+    background: #11101d;
+    transition: all 0.5s ease
+}
+
+.sidebar .nav-list li .sub-menu{
+    margin-top: -5px;
+    display: none;
+    transition: all 0.9s easy;
+}
+.sidebar .nav-list li .sub-menu li a{
+    padding-left: 65px;
+}
+.sidebar .nav-list li.showMinu .sub-menu{
+    display: block ;
+}
+
+.sidebar.active .nav-list li.showMinu{
+    padding-bottom: 12.5rem;
+    transition: all 0.5s easy;
+}
+
+.sidebar .nav-list li.showMinu{
+    padding-bottom: 0;
+    transition: all .5s easy;
+}
+
+.sidebar .nav-list li.showMinu i.arrow{
+    transform: rotate(-180deg);
+    cursor: pointer;
+}
+
+.sidebar.active{
+    width: 240px;
+}
+
+
+.sidebar .logo_content .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+
+.logo_content .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar #btn{
+    position: absolute;
+    color: #fff;
+    top: 6px;
+    left: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li .tooltips{
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%,-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltips{
+    display: none;
+}
+
+.sidebar ul li:hover .tooltips{
+    transition: all 0.5s easy;
+    opacity: 1;
+    top: 50%;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover{
+    color: #11101d;
+    background: #fff;
+}
+
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    transition: all 0.5s easy;
+}
+
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.main-content{
+    margin-left: 2rem;
+    position: absolute;
+    height: 100%;
+    width: calc(100%-78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+
+
+.sidebar.active ~ .main-content{
+    width: calc(100%-240px);
+    left: 240px;
+}
+brand h2{
+    color: #444;
+}
+
+.brand h2 span{
+    color: var(--color-main);
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.sidebar-menu{
+    margin-top: 9rem;
+}
+
+.sidebar-menu li{
+    margin-bottom: 1rem;
+}
+
+.sidebar-menu a{
+    color: var(--main-text);
+    display: block;
+    padding: .7rem 0rem;
+}
+
+.sidebar-menu a.active {
+    background-color: var(--main-accents);
+    padding: .7rem;
+    border-radius: 7px;
+}
+
+.sidebar-menu a span:first-child{
+    display: inline-block;
+    margin-right: .8rem;
+    font-size: 1.5rem;
+    color: var(--color-main);
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+     
+    padding-top: .5rem;
+}
+
+.header-title-wrapper{
+    display: flex;
+}
+
+.header-title-wrapper label{
+    display: inline-block;
+    color: var(--color-main);
+    margin-right:2rem ;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.header-title h1{
+    color: var(--main-text);
+    font-size: 600; 
+}
+
+.main-content .main{
+    margin-left: 3rem;
+    margin-top: 8rem;
+    margin-right: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 9rem;
+    margin-bottom: 4rem;
+    transition: all 0.5s ease;
+}
+
+.sidebar #arrow{
+    opacity: 0;
+}
+.sidebar.active #arrow{
+    opacity: 1;
+}
+
+.sidebar.active ~ .main-content .main{
+    grid-gap: 5rem;
+    margin-left: 3rem;
+}
+
+.main-content .information{
+    margin-top: 1rem;
+    font-size: 16px ;
+    font-weight: 100;
+    color: #333333;
+}
+
+.main-content .main .temperatures {
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.main-content .main .temperatures h2{
+    color: var(--main-text);
+    font-size: 27px;
+}
+
+.main-content .main .temperatures h3{
+    color: #333333;
+    margin-top: 1rem;
+    font-size: 20px;
+}
+
+.main-content .main .temperatures h1{
+    color: red;
+    margin-top: 1rem;
+    font-size: 25px;
+}
+
+
+
+@media only screen and (max-width:1224px){
+    .main-content .main{
+        margin-left: 1rem;
+        grid-gap: 5rem;
+    }
+
+    .sidebar.active ~ .main-content .main{
+        grid-gap: 3rem;
+        margin-left: 0.5rem;
+    }
+
+    .sidebar.active ~ .main-content .main .temperatures {
+        padding: 1.2rem;
+    }
+
+    .sidebar.active ~ .main-content .main .temperatures h2{
+        font-size: 22px;
+    }
+    
+    .sidebar.active ~ .main-content .main .temperatures h3{
+        margin-top: 1rem;
+        font-size: 15px;
+    }
+    
+    .sidebar.active ~ .main-content .main .temperatures h1{
+        margin-top: 1rem;
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (max-width:860px){
+    .main-content .main{
+        margin-left: 1rem;
+        grid-gap: 3rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .sidebar.active ~ .main-content .main{
+        grid-gap: 2rem;
+        margin-left: 0.5rem;
+    }
+    .header-title-wrapper label{
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (max-width:580px){
+    .main-content .main .temperatures {
+        padding: 1.2rem;
+    }
+
+    .main-content .main .temperatures h2{
+        font-size: 22px;
+    }
+    
+    .main-content .main .temperatures h3{
+        margin-top: 1rem;
+        font-size: 15px;
+    }
+    
+    .main-content .main .temperatures h1{
+        margin-top: 1rem;
+        font-size: 20px;
+    }
+    .sidebar.active ~ .main-content .main .temperatures {
+        padding: 1rem;
+    }
+
+    .sidebar.active ~ .main-content .main .temperatures h2{
+        font-size: 20px;
+    }
+    
+    .sidebar.active ~ .main-content .main .temperatures h3{
+        margin-top: 1rem;
+        font-size: 13px;
+    }
+    
+    .sidebar.active ~ .main-content .main .temperatures h1{
+        margin-top: 1rem;
+        font-size: 18px;
+    }
+
+    .sidebar.active ~ .main-content {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width:500px){
+
+}
