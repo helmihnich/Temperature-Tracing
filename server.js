@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(express.json())
 app.set('view engine', 'ejs');
-let server = http.createServer(app)
-let io = socket_io(server)
+let server = http.createServer(app);
+let io = socket_io(server);
 
 mongoose.connect("mongodb://127.0.0.1:27017/inpe");
 
