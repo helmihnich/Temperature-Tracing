@@ -1,4 +1,4 @@
-                                                                    Temperature-Tracing
+                                                      Temperature-Tracing
 
 
 For this project we have 2 parts:
